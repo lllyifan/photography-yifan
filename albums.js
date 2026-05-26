@@ -8,7 +8,7 @@ window.photoAlbums = [
   {
     slug: "los-angeles",
     title: "LOS ANGELES",
-    cover: "",
+    cover: "photos/covers/los-angeles.jpg",
     photos: [],
   },
   {
@@ -26,7 +26,7 @@ window.photoAlbums = [
   {
     slug: "paris",
     title: "PARIS",
-    cover: "",
+    cover: "photos/covers/paris.jpg",
     photos: [],
   },
   {
