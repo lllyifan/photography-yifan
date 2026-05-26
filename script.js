@@ -13,9 +13,9 @@ const cursors = document.querySelectorAll(".cursor");
 carousel.innerHTML = albums
   .map(
     (album) => `
-      <a class="carousel-item" href="album.html?album=${album.slug}" aria-label="${album.title}">
+      <a class="carousel-item${album.cover ? "" : " no-cover"}" href="album.html?album=${album.slug}" aria-label="${album.title}">
         <div class="carousel-box">
-          <img src="${album.cover}" alt="">
+          ${album.cover ? `<img src="${album.cover}" alt="">` : ""}
           <span class="title">${album.title}</span>
         </div>
       </a>
@@ -91,14 +91,12 @@ const handlePointerUp = () => {
   isDown = false;
 };
 
-if (items.length > 0) {
-  document.addEventListener("wheel", handleWheel, { passive: true });
-  document.addEventListener("mousedown", handlePointerDown);
-  document.addEventListener("mousemove", handlePointerMove);
-  document.addEventListener("mouseup", handlePointerUp);
-  document.addEventListener("touchstart", handlePointerDown, { passive: true });
-  document.addEventListener("touchmove", handlePointerMove, { passive: false });
-  document.addEventListener("touchend", handlePointerUp);
+document.addEventListener("wheel", handleWheel, { passive: true });
+document.addEventListener("mousedown", handlePointerDown);
+document.addEventListener("mousemove", handlePointerMove);
+document.addEventListener("mouseup", handlePointerUp);
+document.addEventListener("touchstart", handlePointerDown, { passive: true });
+document.addEventListener("touchmove", handlePointerMove, { passive: false });
+document.addEventListener("touchend", handlePointerUp);
 
-  animate();
-}
+animate();

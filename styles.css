@@ -113,6 +113,12 @@ a {
   filter: saturate(0.9) contrast(1.04);
 }
 
+.carousel-item.no-cover .carousel-box {
+  background:
+    radial-gradient(circle at 70% 26%, rgba(87, 154, 255, 0.3), transparent 32%),
+    linear-gradient(135deg, #061733, #020817 72%);
+}
+
 .title {
   position: absolute;
   z-index: 2;

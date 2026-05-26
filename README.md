@@ -1,10 +1,12 @@
-# Photography Yifan
+# Places
 
-A static photography portfolio site. The home page shows travel places as album covers, and each album opens into a photo gallery.
+这是一个静态摄影集网站：首页是斜向滑动的地点专辑封面，点中间当前专辑可以进入详情页查看照片。
 
-## Edit albums
+## 修改专辑内容
 
-Edit `albums.js`. Each album has this shape:
+只需要改 `albums.js`。
+
+每一个专辑长这样：
 
 ```js
 {
@@ -14,15 +16,26 @@ Edit `albums.js`. Each album has this shape:
   photos: [
     "photos/tokyo/01.jpg",
     "photos/tokyo/02.jpg",
+    "photos/tokyo/03.jpg",
   ],
 }
 ```
 
-- `slug`: URL name, use lowercase English and hyphens.
-- `title`: place name shown on the cover.
-- `cover`: album cover image.
-- `photos`: photos shown inside the album page.
+- `slug` 是网址里用的名字，只用英文、小写、横线，例如 `lake-district`。
+- `title` 是封面上显示的地点名。
+- `cover` 是首页专辑封面。
+- `photos` 是点进专辑后展示的照片。
 
-## Deploy
+本地照片建议放成这种结构：
 
-This is a pure static site. Publish the repository with GitHub Pages from the `main` branch root.
+```text
+photos/
+  tokyo/
+    cover.jpg
+    01.jpg
+    02.jpg
+```
+
+## 变成真正的网站
+
+这是纯静态网站，不需要服务器后端。把整个文件夹上传到 GitHub Pages、Netlify、Vercel 或任意静态托管服务即可。入口文件是 `index.html`。
